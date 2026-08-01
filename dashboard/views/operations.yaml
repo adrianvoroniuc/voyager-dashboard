@@ -1,71 +1,114 @@
 title: Operations
+
 path: operations
+
 icon: mdi:starship
 
-type: sections
-max_columns: 3
+cards:
 
-sections:
+  - type: custom:layout-card
 
-  - type: grid
+    layout_type: custom:grid-layout
+
+    layout:
+
+      grid-template-columns: 220px 1fr
+      grid-template-rows: auto auto
+      grid-template-areas: |
+        "sidebar header"
+        "sidebar main"
+
     cards:
 
+      ##########################################################
+      # Sidebar
+      ##########################################################
+
+      - type: vertical-stack
+        view_layout:
+          grid-area: sidebar
+
+        cards:
+
+          - type: custom:button-card
+            template: lcars_sidebar
+            name: Operations
+            icon: mdi:starship
+
+          - type: custom:button-card
+            template: lcars_sidebar
+            name: Lighting
+            icon: mdi:lightbulb
+
+          - type: custom:button-card
+            template: lcars_sidebar
+            name: Security
+            icon: mdi:shield
+
+          - type: custom:button-card
+            template: lcars_sidebar
+            name: Engineering
+            icon: mdi:cog
+
+          - type: custom:button-card
+            template: lcars_sidebar
+            name: Aquarium
+            icon: mdi:fish
+
+      ##########################################################
+      # Header
+      ##########################################################
+
       - type: custom:button-card
+
+        view_layout:
+          grid-area: header
+
         template: lcars_header
+
         name: USS VOYAGER
 
-      - type: markdown
-        content: |
-          ## HOME COMPUTER
+      ##########################################################
+      # Main
+      ##########################################################
 
-          **STATUS:** GREEN
+      - type: grid
 
-          **MISSION:** HOME
+        view_layout:
+          grid-area: main
 
-          **COMPUTER:** ONLINE
+        columns: 3
 
-  - type: grid
-    cards:
+        square: false
 
-      - type: custom:button-card
-        template: lcars_navigation
-        name: Lighting
-        icon: mdi:lightbulb
+        cards:
 
-      - type: custom:button-card
-        template: lcars_navigation
-        name: Engineering
-        icon: mdi:engine
+          - type: custom:button-card
+            template: lcars_room
+            entity: switch.living_room_living
+            name: Living Room
 
-      - type: custom:button-card
-        template: lcars_navigation
-        name: Security
-        icon: mdi:shield
+          - type: custom:button-card
+            template: lcars_room
+            entity: light.kitchen_led
+            name: Kitchen
 
-      - type: custom:button-card
-        template: lcars_navigation
-        name: Aquarium
-        icon: mdi:fish
+          - type: custom:button-card
+            template: lcars_room
+            entity: switch.dining_room_dinning_switch
+            name: Dining
 
-  - type: grid
-    cards:
+          - type: custom:button-card
+            template: lcars_room
+            entity: light.lobby_govee_ceiling_light
+            name: Lobby
 
-      - type: custom:button-card
-        template: lcars_room
-        entity: light.kitchen_led
-        name: Kitchen
+          - type: custom:button-card
+            template: lcars_room
+            entity: light.bedroom_led
+            name: Bedroom
 
-      - type: custom:button-card
-        template: lcars_room
-        entity: switch.living_switch
-        name: Living
-
-      - type: custom:button-card
-        template: lcars_room
-        entity: switch.stairs_led
-        name: Lobby
-
-      - type: custom:button-card
-        template: lcars_room
-        entity: switch.innr_switch
-        name: Kitchen Switch
+          - type: custom:button-card
+            template: lcars_room
+            entity: switch.co2_socket_1
+            name: Aquarium

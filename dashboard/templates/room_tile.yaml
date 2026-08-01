@@ -1,0 +1,25 @@
+button_card_templates:
+
+  lcars_room:
+
+    show_state: true
+    show_icon: true
+
+    styles:
+
+      card:
+        - height: 120px
+        - border-radius: 28px
+        - border-left: 14px solid var(--lcars-orange)
+
+      icon:
+        - color: var(--lcars-orange)
+        - width: 42px
+
+      name:
+        - font-size: 22px
+        - font-weight: bold
+
+      state:
+        - font-size: 15px
+        
