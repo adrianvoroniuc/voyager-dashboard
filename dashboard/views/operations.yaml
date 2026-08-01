@@ -1,114 +1,145 @@
 title: Operations
-
 path: operations
-
 icon: mdi:starship
+
+type: custom:layout-card
+layout_type: custom:grid-layout
+
+layout:
+  grid-template-columns: 230px 1fr
+  grid-template-rows: auto 1fr
+  grid-template-areas: |
+    "sidebar header"
+    "sidebar content"
+  margin: 0
+  grid-gap: 16px
 
 cards:
 
-  - type: custom:layout-card
+###############################################################################
+# SIDEBAR
+###############################################################################
 
-    layout_type: custom:grid-layout
-
-    layout:
-
-      grid-template-columns: 220px 1fr
-      grid-template-rows: auto auto
-      grid-template-areas: |
-        "sidebar header"
-        "sidebar main"
+  - type: vertical-stack
+    view_layout:
+      grid-area: sidebar
 
     cards:
 
-      ##########################################################
-      # Sidebar
-      ##########################################################
-
-      - type: vertical-stack
-        view_layout:
-          grid-area: sidebar
-
-        cards:
-
-          - type: custom:button-card
-            template: lcars_sidebar
-            name: Operations
-            icon: mdi:starship
-
-          - type: custom:button-card
-            template: lcars_sidebar
-            name: Lighting
-            icon: mdi:lightbulb
-
-          - type: custom:button-card
-            template: lcars_sidebar
-            name: Security
-            icon: mdi:shield
-
-          - type: custom:button-card
-            template: lcars_sidebar
-            name: Engineering
-            icon: mdi:cog
-
-          - type: custom:button-card
-            template: lcars_sidebar
-            name: Aquarium
-            icon: mdi:fish
-
-      ##########################################################
-      # Header
-      ##########################################################
-
       - type: custom:button-card
-
-        view_layout:
-          grid-area: header
-
         template: lcars_header
-
         name: USS VOYAGER
 
-      ##########################################################
-      # Main
-      ##########################################################
+      - type: custom:button-card
+        template: lcars_nav
+        name: Operations
+        icon: mdi:starship
 
-      - type: grid
+      - type: custom:button-card
+        template: lcars_nav
+        name: Lighting
+        icon: mdi:lightbulb
+        tap_action:
+          action: navigate
+          navigation_path: /dashboard-voyager/lighting
 
-        view_layout:
-          grid-area: main
+      - type: custom:button-card
+        template: lcars_nav
+        name: Security
+        icon: mdi:shield
 
-        columns: 3
+      - type: custom:button-card
+        template: lcars_nav
+        name: Engineering
+        icon: mdi:cog
 
-        square: false
+      - type: custom:button-card
+        template: lcars_nav
+        name: Aquarium
+        icon: mdi:fish
 
-        cards:
+###############################################################################
+# HEADER
+###############################################################################
 
-          - type: custom:button-card
-            template: lcars_room
-            entity: switch.living_room_living
-            name: Living Room
+  - type: markdown
+    view_layout:
+      grid-area: header
 
-          - type: custom:button-card
-            template: lcars_room
-            entity: light.kitchen_led
-            name: Kitchen
+    content: |
+      # OPERATIONS
 
-          - type: custom:button-card
-            template: lcars_room
-            entity: switch.dining_room_dinning_switch
-            name: Dining
+      **Status:** 🟢 All Systems Nominal
 
-          - type: custom:button-card
-            template: lcars_room
-            entity: light.lobby_govee_ceiling_light
-            name: Lobby
+###############################################################################
+# CONTENT
+###############################################################################
 
-          - type: custom:button-card
-            template: lcars_room
-            entity: light.bedroom_led
-            name: Bedroom
+  - type: grid
+    view_layout:
+      grid-area: content
 
-          - type: custom:button-card
-            template: lcars_room
-            entity: switch.co2_socket_1
-            name: Aquarium
+    columns: 3
+    square: false
+
+    cards:
+
+##########################################################################
+# Living Room
+##########################################################################
+
+      - type: custom:button-card
+        template: lcars_room
+        entity: switch.living_room_living
+        icon: mdi:sofa
+        name: Living Room
+
+##########################################################################
+# Kitchen
+##########################################################################
+
+      - type: custom:button-card
+        template: lcars_room
+        entity: light.kitchen_led
+        icon: mdi:silverware-fork-knife
+        name: Kitchen
+
+##########################################################################
+# Dining
+##########################################################################
+
+      - type: custom:button-card
+        template: lcars_room
+        entity: switch.dining_room_dinning_switch
+        icon: mdi:table-chair
+        name: Dining
+
+##########################################################################
+# Lobby
+##########################################################################
+
+      - type: custom:button-card
+        template: lcars_room
+        entity: light.lobby_govee_ceiling_light
+        icon: mdi:door
+        name: Lobby
+
+##########################################################################
+# Bedroom
+##########################################################################
+
+      - type: custom:button-card
+        template: lcars_room
+        entity: light.bedroom_led
+        icon: mdi:bed
+        name: Bedroom
+
+##########################################################################
+# Aquarium
+##########################################################################
+
+      - type: custom:button-card
+        template: lcars_room
+        entity: switch.co2_socket_1
+        icon: mdi:fishbowl
+        name: Aquarium
