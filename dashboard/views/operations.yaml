@@ -1,0 +1,71 @@
+title: Operations
+path: operations
+icon: mdi:starship
+
+type: sections
+max_columns: 3
+
+sections:
+
+  - type: grid
+    cards:
+
+      - type: custom:button-card
+        template: lcars_header
+        name: USS VOYAGER
+
+      - type: markdown
+        content: |
+          ## HOME COMPUTER
+
+          **STATUS:** GREEN
+
+          **MISSION:** HOME
+
+          **COMPUTER:** ONLINE
+
+  - type: grid
+    cards:
+
+      - type: custom:button-card
+        template: lcars_navigation
+        name: Lighting
+        icon: mdi:lightbulb
+
+      - type: custom:button-card
+        template: lcars_navigation
+        name: Engineering
+        icon: mdi:engine
+
+      - type: custom:button-card
+        template: lcars_navigation
+        name: Security
+        icon: mdi:shield
+
+      - type: custom:button-card
+        template: lcars_navigation
+        name: Aquarium
+        icon: mdi:fish
+
+  - type: grid
+    cards:
+
+      - type: custom:button-card
+        template: lcars_room
+        entity: light.kitchen_led
+        name: Kitchen
+
+      - type: custom:button-card
+        template: lcars_room
+        entity: switch.living_switch
+        name: Living
+
+      - type: custom:button-card
+        template: lcars_room
+        entity: switch.stairs_led
+        name: Lobby
+
+      - type: custom:button-card
+        template: lcars_room
+        entity: switch.innr_switch
+        name: Kitchen Switch
