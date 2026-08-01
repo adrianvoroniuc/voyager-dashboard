@@ -104,6 +104,33 @@ cards:
         icon: mdi:silverware-fork-knife
         name: Kitchen
 
+        tap_action:
+          action: fire-dom-event
+          browser_mod:
+            service: browser_mod.popup
+            data:
+              title: Kitchen
+              size: wide
+              content:
+                type: vertical-stack
+                cards:
+
+                  - type: tile
+                    entity: switch.spot
+                    name: Spot
+
+                  - type: tile
+                    entity: light.counter
+                    name: Counter
+
+                  - type: tile
+                    entity: light.kitchen_led
+                    name: Kitchen LED
+
+                  - type: tile
+                    entity: switch.kitchen_innr_switch
+                    name: INNR Switch
+
 ##########################################################################
 # Dining
 ##########################################################################
