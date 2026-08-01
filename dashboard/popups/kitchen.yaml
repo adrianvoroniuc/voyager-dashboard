@@ -1,0 +1,30 @@
+title: Kitchen
+
+cards:
+  - type: heading
+    heading: Kitchen Controls
+
+  - type: grid
+    columns: 2
+    square: false
+    cards:
+
+      - type: custom:button-card
+        template: lcars_device
+        entity: switch.spot
+        name: Spot
+
+      - type: custom:button-card
+        template: lcars_device
+        entity: light.counter
+        name: Counter
+
+      - type: custom:button-card
+        template: lcars_device
+        entity: light.kitchen_led
+        name: Kitchen LED
+
+      - type: custom:button-card
+        template: lcars_device
+        entity: switch.kitchen_innr_switch
+        name: INNR Switch

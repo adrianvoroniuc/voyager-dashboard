@@ -1,0 +1,26 @@
+button_card_templates:
+
+  lcars_metric:
+
+    show_icon: true
+    show_name: true
+    show_state: true
+
+    styles:
+
+      card:
+        - border-radius: 0 36px 36px 0
+        - border-left: 14px solid var(--lcars-blue)
+        - padding: 16px
+        - background: var(--lcars-panel)
+
+      icon:
+        - color: var(--lcars-blue)
+
+      name:
+        - font-size: 18px
+        - font-weight: bold
+
+      state:
+        - font-size: 24px
+        - color: var(--lcars-white)

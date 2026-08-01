@@ -1,0 +1,52 @@
+button_card_templates:
+
+  lcars_device:
+
+    show_state: true
+    show_icon: true
+    show_name: true
+
+    size: 38%
+
+    tap_action:
+      action: toggle
+
+    hold_action:
+      action: more-info
+
+    styles:
+
+      card:
+        - border-radius: 22px
+        - border-left: 10px solid var(--lcars-orange)
+        - background: var(--lcars-panel)
+        - padding: 14px
+        - transition: all .25s ease
+
+      icon:
+        - color: var(--lcars-orange)
+
+      name:
+        - font-size: 18px
+        - font-weight: bold
+
+      state:
+        - font-size: 13px
+
+    state:
+
+      - value: "on"
+
+        styles:
+
+          card:
+            - background: var(--lcars-orange)
+
+          icon:
+            - color: black
+
+          name:
+            - color: black
+
+          state:
+            - color: black
