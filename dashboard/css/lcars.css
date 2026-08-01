@@ -1,0 +1,249 @@
+/******************************************************************************
+ USS VOYAGER DASHBOARD
+ LCARS Framework
+ Version 0.1.0
+******************************************************************************/
+
+/******************************************************************************
+ COLOR SYSTEM
+******************************************************************************/
+
+:root {
+
+  --lcars-bg: #090A0F;
+
+  --lcars-panel: #1A1C23;
+
+  --lcars-orange: #CC7A21;
+
+  --lcars-orange-light: #F4A33D;
+
+  --lcars-gold: #F6C872;
+
+  --lcars-purple: #7258C9;
+
+  --lcars-blue: #69A7FF;
+
+  --lcars-green: #59B85C;
+
+  --lcars-red: #C73333;
+
+  --lcars-white: #F2E8C8;
+
+}
+
+/******************************************************************************
+ HOME ASSISTANT
+******************************************************************************/
+
+body,
+html,
+home-assistant,
+ha-app-layout {
+
+    background: var(--lcars-bg);
+
+    color: var(--lcars-white);
+
+    font-family:
+        "Antonio",
+        "Segoe UI",
+        sans-serif;
+
+}
+
+/******************************************************************************
+ DEFAULT CARD
+******************************************************************************/
+
+ha-card {
+
+    background: var(--lcars-panel);
+
+    border-radius: 28px;
+
+    border-left: 14px solid var(--lcars-orange);
+
+    border-top: 4px solid var(--lcars-orange);
+
+    color: var(--lcars-white);
+
+    box-shadow: none;
+
+    transition: .25s ease;
+
+}
+
+ha-card:hover {
+
+    transform: translateY(-2px);
+
+}
+
+/******************************************************************************
+ HEADINGS
+******************************************************************************/
+
+h1 {
+
+    color: var(--lcars-gold);
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+}
+
+h2 {
+
+    color: var(--lcars-orange-light);
+
+    font-size: 24px;
+
+}
+
+h3 {
+
+    color: var(--lcars-white);
+
+}
+
+/******************************************************************************
+ LCARS PANELS
+******************************************************************************/
+
+.lcars-panel {
+
+    background: var(--lcars-panel);
+
+    border-left: 18px solid var(--lcars-orange);
+
+    border-radius: 30px;
+
+    padding: 16px;
+
+}
+
+.lcars-room {
+
+    min-height: 90px;
+
+}
+
+.lcars-header {
+
+    font-size: 36px;
+
+    color: var(--lcars-gold);
+
+    letter-spacing: .15em;
+
+    text-transform: uppercase;
+
+}
+
+/******************************************************************************
+ STATUS
+******************************************************************************/
+
+.status-green {
+
+    border-left-color: var(--lcars-green);
+
+}
+
+.status-yellow {
+
+    border-left-color: #FFD147;
+
+}
+
+.status-red {
+
+    border-left-color: var(--lcars-red);
+
+}
+
+/******************************************************************************
+ TABLET
+******************************************************************************/
+
+@media (min-width:900px){
+
+    ha-card{
+
+        margin:12px;
+
+    }
+
+}
+
+/******************************************************************************
+ ANIMATIONS
+******************************************************************************/
+
+@keyframes lcarsPulse {
+
+    0% {
+
+        opacity:1;
+
+    }
+
+    50% {
+
+        opacity:.6;
+
+    }
+
+    100% {
+
+        opacity:1;
+
+    }
+
+}
+
+.red-alert {
+
+    animation: lcarsPulse .8s infinite;
+
+}
+
+.yellow-alert {
+
+    animation: lcarsPulse 2s infinite;
+
+}
+
+/******************************************************************************
+ SCROLLBAR
+******************************************************************************/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--lcars-orange);
+
+    border-radius:10px;
+
+}
+
+/******************************************************************************
+ FOOTER
+******************************************************************************/
+
+.lcars-footer{
+
+    text-align:center;
+
+    color:#999;
+
+    font-size:12px;
+
+}
