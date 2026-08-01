@@ -1,0 +1,196 @@
+################################################################################
+# Voyager Dashboard
+# LCARS Component Library
+# Version: 0.1.0
+################################################################################
+
+button_card_templates:
+
+  ##########################################################################
+  # Base Template
+  ##########################################################################
+
+  lcars_base:
+
+    show_icon: true
+    show_name: true
+    show_state: false
+
+    size: 40%
+
+    styles:
+
+      grid:
+        - grid-template-areas: '"i n"'
+        - grid-template-columns: 60px 1fr
+        - grid-template-rows: auto
+
+      card:
+        - border-radius: 30px
+        - padding: 16px
+        - background: var(--lcars-panel)
+        - color: var(--lcars-text)
+        - border-left: 14px solid var(--lcars-orange)
+        - transition: all .25s ease
+        - box-shadow: none
+
+      icon:
+        - color: var(--lcars-orange)
+
+      name:
+        - font-size: 20px
+        - font-weight: 600
+        - justify-self: start
+
+  ##########################################################################
+  # Navigation Button
+  ##########################################################################
+
+  lcars_navigation:
+
+    template: lcars_base
+
+    tap_action:
+      action: navigate
+
+  ##########################################################################
+  # Room Tile
+  ##########################################################################
+
+  lcars_room:
+
+    template: lcars_base
+
+    styles:
+
+      card:
+        - min-height: 90px
+
+  ##########################################################################
+  # Light
+  ##########################################################################
+
+  lcars_light:
+
+    template: lcars_room
+
+    tap_action:
+      action: toggle
+
+    state:
+
+      - value: "on"
+
+        styles:
+
+          card:
+            - background: var(--lcars-orange)
+
+          icon:
+            - color: black
+
+          name:
+            - color: black
+
+      - value: "off"
+
+        styles:
+
+          card:
+            - opacity: .55
+
+  ##########################################################################
+  # Switch
+  ##########################################################################
+
+  lcars_switch:
+
+    template: lcars_light
+
+  ##########################################################################
+  # Sensor
+  ##########################################################################
+
+  lcars_sensor:
+
+    template: lcars_base
+
+    show_state: true
+
+    styles:
+
+      state:
+        - font-size: 18px
+
+  ##########################################################################
+  # Status
+  ##########################################################################
+
+  lcars_status:
+
+    template: lcars_sensor
+
+    show_icon: false
+
+  ##########################################################################
+  # Camera
+  ##########################################################################
+
+  lcars_camera:
+
+    template: lcars_room
+
+    tap_action:
+      action: more-info
+
+  ##########################################################################
+  # Header
+  ##########################################################################
+
+  lcars_header:
+
+    show_icon: false
+    show_state: false
+
+    styles:
+
+      card:
+        - background: none
+        - box-shadow: none
+        - border: none
+
+      name:
+        - font-size: 34px
+        - color: var(--lcars-gold)
+        - font-weight: bold
+
+  ##########################################################################
+  # Alert Panels
+  ##########################################################################
+
+  lcars_green:
+
+    template: lcars_status
+
+    styles:
+
+      card:
+        - border-left: 14px solid #5cc25c
+
+  lcars_yellow:
+
+    template: lcars_status
+
+    styles:
+
+      card:
+        - border-left: 14px solid #f5d742
+
+  lcars_red:
+
+    template: lcars_status
+
+    styles:
+
+      card:
+        - border-left: 14px solid #ff4444
