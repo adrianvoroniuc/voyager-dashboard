@@ -1,0 +1,29 @@
+button_card_templates:
+
+  lcars_nav:
+
+    color_type: card
+
+    show_state: false
+
+    show_icon: true
+
+    styles:
+
+      card:
+        - border-radius: 26px
+        - height: 64px
+        - background: var(--lcars-panel)
+        - border-left: 12px solid var(--lcars-orange)
+
+      icon:
+        - color: var(--lcars-orange)
+
+      name:
+        - color: var(--lcars-white)
+        - font-size: 18px
+        - font-weight: bold
+
+    tap_action:
+
+      action: navigate

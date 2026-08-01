@@ -1,0 +1,48 @@
+/******************************************************************************
+ Voyager LCARS Design Tokens
+******************************************************************************/
+
+:root {
+
+  /* Backgrounds */
+
+  --lcars-bg: #07090d;
+  --lcars-surface: #141820;
+  --lcars-panel: #1c2029;
+
+  /* LCARS Colours */
+
+  --lcars-orange: #cc7a21;
+  --lcars-orange-light: #f2a54a;
+
+  --lcars-gold: #f5c76b;
+
+  --lcars-purple: #8667d8;
+
+  --lcars-blue: #62a6ff;
+
+  --lcars-red: #d74c47;
+
+  --lcars-green: #5ebc61;
+
+  --lcars-white: #efe6c7;
+
+  /* Radius */
+
+  --radius-large:32px;
+  --radius-medium:22px;
+  --radius-small:14px;
+
+  /* Spacing */
+
+  --space-xs:6px;
+  --space-sm:10px;
+  --space-md:16px;
+  --space-lg:24px;
+  --space-xl:40px;
+
+  /* Navigation */
+
+  --nav-width:220px;
+
+}

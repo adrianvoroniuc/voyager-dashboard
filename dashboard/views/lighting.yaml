@@ -1,0 +1,49 @@
+title: Lighting
+
+path: lighting
+
+icon: mdi:lightbulb
+
+type: sections
+
+max_columns: 2
+
+sections:
+
+  - type: grid
+
+    cards:
+
+      - type: heading
+        heading: Kitchen
+
+      - type: tile
+        entity: light.counter
+
+      - type: tile
+        entity: switch.innr_switch
+
+      - type: tile
+        entity: light.kitchen_led
+
+      - type: tile
+        entity: light.spot
+
+  - type: grid
+
+    cards:
+
+      - type: heading
+        heading: Living Room
+
+      - type: tile
+        entity: switch.living
+
+      - type: tile
+        entity: light.living_rgb_1
+
+      - type: tile
+        entity: light.living_rgb_2
+
+      - type: tile
+        entity: light.living_rgb_3

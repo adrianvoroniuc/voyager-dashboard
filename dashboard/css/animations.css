@@ -1,0 +1,61 @@
+/******************************************************************************
+ Voyager Animations
+******************************************************************************/
+
+@keyframes pulse {
+
+  0%{
+      opacity:1;
+  }
+
+  50%{
+      opacity:.45;
+  }
+
+  100%{
+      opacity:1;
+  }
+
+}
+
+.red-alert{
+
+    animation:pulse .7s infinite;
+
+}
+
+.yellow-alert{
+
+    animation:pulse 1.8s infinite;
+
+}
+
+.green-status{
+
+    animation:none;
+
+}
+
+@keyframes slideIn{
+
+    from{
+
+        transform:translateX(-20px);
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateX(0);
+        opacity:1;
+
+    }
+
+}
+
+.lcars-panel{
+
+    animation:slideIn .35s ease;
+
+}
