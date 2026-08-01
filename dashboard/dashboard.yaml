@@ -1,0 +1,15 @@
+title: USS Voyager
+
+button_card_templates: !include templates/lcars.yaml
+
+views:
+
+  - !include views/operations.yaml
+
+  - !include views/lighting.yaml
+
+  - !include views/security.yaml
+
+  - !include views/engineering.yaml
+
+  - !include views/aquarium.yaml
